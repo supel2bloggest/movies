@@ -1,6 +1,7 @@
 import MovieCard from "@/components/MovieCard";
 import Link from "next/link";
 import { Key } from "react";
+import { useTranslations } from "next-intl";
 
 const list = [
   {
@@ -30,11 +31,12 @@ const list = [
 ];
 
 export default function Page() {
+  const t = useTranslations("Home");
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <section className="mb-9">
         <h1 id="page-title" className="text-xl">
-          แตะเพื่อเลือกหนังที่ท่านต้องการจอง
+          {t("title")}
         </h1>
       </section>
       <section className="grid grid-cols-3 gap-3">
@@ -42,7 +44,6 @@ export default function Page() {
           return (
             <Link key={key as Key} href={`/movies/${data.id}`}>
               <MovieCard
-                id={data.id}
                 image={data.image}
                 title={data.title}
                 description={data.description}

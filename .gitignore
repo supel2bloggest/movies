@@ -36,3 +36,5 @@ next-env.d.ts
 
 .vscode
 playwright-report
+
+.env

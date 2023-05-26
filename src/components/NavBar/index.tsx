@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { LANGUAGE } from "@/redux/slice/settingSlice";
+import { LanguageSetup } from "./LanguageSetup";
 
 export default function NavBar() {
   return (
@@ -7,13 +9,9 @@ export default function NavBar() {
         <Link href="/">MOVIES CATCHER</Link>
       </h1>
       <div className="flex justify-end">
-        <div className="cursor-pointer transition-opacity hover:opacity-60 font-bold text-blue-500">
-          TH
-        </div>
+        <LanguageSetup language={LANGUAGE.TH} />
         <div className="mx-1">|</div>
-        <div className="cursor-pointer transition-opacity hover:opacity-60 font-bold">
-          EN
-        </div>
+        <LanguageSetup language={LANGUAGE.EN} />
       </div>
     </nav>
   );
