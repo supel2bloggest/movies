@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "AVENGERS",
+        "description": "MOVIES 1",
+        "image": "/images/avenger-1.jpeg"
+    },
+    {
+        "id": 2,
+        "title": "AVENGERS AGE OF ULTRON",
+        "description": "MOVIES 2",
+        "image": "/images/avenger-2.jpeg"
+    },
+    {
+        "id": 3,
+        "title": "AVENGERS INFINITY WARS",
+        "description": "MOVIES 3",
+        "image": "/images/avenger-3.jpeg"
+    },
+    {
+        "id": 4,
+        "title": "AVENGERS END GAME",
+        "description": "MOVIES 4",
+        "image": "/images/avenger-4.jpeg"
+    }
+]

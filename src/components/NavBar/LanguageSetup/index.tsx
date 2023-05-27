@@ -2,21 +2,26 @@
 
 import { useAppSelector } from "@/redux/hooks";
 import clsx from "clsx";
+import { useLocale } from "next-intl";
 import Link from "next-intl/link";
+import { usePathname } from "next/navigation";
 
 interface Props {
   language: string;
 }
 
 export function LanguageSetup({ language }: Props) {
-  const { language: stateLanguage } = useAppSelector((state) => state.setting);
+  const locale = useLocale();
+  const pathname = usePathname();
+  const regex = new RegExp(`^\\/${locale}`, "g");
+
   return (
-    <Link href={`/`} locale={language}>
+    <Link href={`${pathname.replace(regex, "") || "/"}`} locale={language}>
       <div
         className={clsx(
           "cursor-pointer transition-opacity hover:opacity-60 font-bold",
           {
-            "text-blue-500": stateLanguage === language,
+            "text-blue-500": language === locale,
           }
         )}
       >

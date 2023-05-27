@@ -1,6 +1,8 @@
 import MovieCard from "@/components/MovieCard";
+import { useTranslations } from "next-intl";
 
 export default function Page({ params }: { params: { id: number } }) {
+  const t = useTranslations("MOVIE_DETAIL");
   const { id } = params;
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -13,7 +15,7 @@ export default function Page({ params }: { params: { id: number } }) {
           />
         </div>
         <div>
-          <h1 className="font-bold text-3xl">เนื้อหา</h1>
+          <h1 className="font-bold text-3xl">{t("story")}</h1>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -26,7 +28,9 @@ export default function Page({ params }: { params: { id: number } }) {
             PageMaker including versions of Lorem Ipsum.
           </p>
           <div className="my-6"></div>
-          <button className="p-3 hover:opacity-80 bg-red-500 w-28">จอง</button>
+          <button className="p-3 hover:opacity-80 bg-red-500 w-28">
+            {t("booking")}
+          </button>
         </div>
       </section>
     </main>
